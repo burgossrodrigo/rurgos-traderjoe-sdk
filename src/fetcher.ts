@@ -31,7 +31,7 @@ export abstract class Fetcher {
   public static async fetchTokenData(
     chainId: ChainId,
     address: string,
-    provider = JsonRpcProvider('https://api.avax.network/ext/bc/C/rpc'),
+    provider = new JsonRpcProvider('https://api.avax.network/ext/bc/C/rpc'),
     symbol?: string,
     name?: string
   ): Promise<Token> {
