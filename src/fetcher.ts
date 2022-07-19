@@ -60,7 +60,7 @@ export abstract class Fetcher {
   public static async fetchPairData(
     tokenA: Token,
     tokenB: Token,
-    provider = getDefaultProvider(getNetwork(tokenA.chainId))
+    provider = new JsonRpcProvider('https://api.avax.network/ext/bc/C/rpc')
   ): Promise<Pair> {
     invariant(tokenA.chainId === tokenB.chainId, 'CHAIN_ID')
     const address = Pair.getAddress(tokenA, tokenB, tokenA.chainId)
