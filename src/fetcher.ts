@@ -1,5 +1,4 @@
 import { Contract } from '@ethersproject/contracts'
-import { getNetwork } from '@ethersproject/networks'
 import { JsonRpcProvider } from '@ethersproject/providers'
 import { TokenAmount } from './entities/fractions/tokenAmount'
 import { Pair } from './entities/pair'
