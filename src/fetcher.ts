@@ -1,6 +1,6 @@
 import { Contract } from '@ethersproject/contracts'
 import { getNetwork } from '@ethersproject/networks'
-import { getDefaultProvider } from '@ethersproject/providers'
+import { JsonRpcProvider } from '@ethersproject/providers'
 import { TokenAmount } from './entities/fractions/tokenAmount'
 import { Pair } from './entities/pair'
 import invariant from 'tiny-invariant'
@@ -31,7 +31,7 @@ export abstract class Fetcher {
   public static async fetchTokenData(
     chainId: ChainId,
     address: string,
-    provider = getDefaultProvider(getNetwork(chainId)),
+    provider = JsonRpcProvider('https://api.avax.network/ext/bc/C/rpc'),
     symbol?: string,
     name?: string
   ): Promise<Token> {
